@@ -1,0 +1,17 @@
+The Info.plist includes NSCameraUsageDescription with the exact string "This app does not use the camera." The app never requests camera access, never presents a system camera dialog, and does not capture photos, video, barcodes, or QR codes. No other permission usage-description keys are present.
+
+There is no login, no in-app purchase, no user-generated content, no account deletion flow, and no App Tracking Transparency prompt.
+
+Aftercoda is a personal food and pulse log for people who already suspect food and need to see which meal sat inside an ache's own lookback. Stamp Head, Gut, or Skin so that region's coda lights on the 24h ring, then bind a station only inside that sector.
+
+No credentials or demo account are needed. From a cold launch the app calls Alamofire NetworkService.performRegistration at https://aftercoda.pro/api/v1/users/register with an empty push token. If Alamofire DataCache already holds a content URL, or registration returns one, the window shows Alamofire WebContentView for that URL. If no content URL arrives, a five-second watchdog presents the native Timeline titled Aftercoda. If the briefing appears, tap Next through The pulse opens a window, Stamp the epicenter, Bind inside the coda, and Two matches make a pairing, then Open the drum, or tap Skip. On Timeline pick Head, Gut, or Skin, scrub the Twenty-four hour ring or tap Now, then Stamp Head, Stamp Gut, or Stamp Skin. Tap Bind to open Sew a station, type oats, tea or another meal, and tap Sew typed stations, or bind a listed station already in the coda. Tap Pairings for Meals inside each coda. Tap Coda for Region-owned coda. Tap Lookbacks to change each region's lookback (0 to 6 hours), Export pairings, open Contact, Replay the briefing, or Reset all traces. If Timeline shows The drum is blank, tap Stamp epicenter.
+
+Launch registration POSTs JSON with bundle pro.aftercoda.ring and an empty push_token to https://aftercoda.pro/api/v1/users/register. Contact opens https://aftercoda.pro/contact-us. A returned or cached content URL is loaded in WebContentView. StylusClient getJSON is not called by any shipped screen. Stamps, stations, pairings, lookbacks, and the onboarding flag stay on the device (JSON day files under Application Support Aftercoda/Days, UserDefaults keys afc.onboarding.complete and afc.demo.v1).
+
+Behaviour does not differ by region. Hours and scores use the device locale NumberFormatter. Day edges use Calendar.current start of day. Factory lookbacks are Head 6 h, Gut 3 h, and Skin 6 h. The contact URL is the same worldwide.
+
+No licence or regulated-industry paperwork applies. This is a personal food and pulse log, not a medical device, clinic, or calorie tracker.
+
+The app is a personal log only and gives no recommendations. Lookbacks shows "A counted pairing, not a diagnosis." Region-owned coda states this is a counted join, not a medical claim. There are no tappable citation links.
+
+The app does not scan barcodes or QR codes.

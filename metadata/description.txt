@@ -1,0 +1,12 @@
+Aftercoda is a personal food and pulse log. On Timeline you stamp Head, Gut, or Skin on a 24h ring, then bind a station only inside that region's coda.
+
+• Timeline: 24h ring, Head, Gut, and Skin, Now, Stamp, and Bind
+• Stamp the epicenter at the scrubbed hour or Now; that region's coda lights (lookback 0 to 6 hours)
+• Sew a station: bind a listed station already in the coda, or type one (oats, tea). Comma or a new line splits stations. Sew typed stations
+• Pairings: Meals inside each coda. A pairing needs two matches. Score is matched over total pulses
+• Coda: Region-owned coda. Each body region keeps its own lookback
+• Lookbacks: retune Head, Gut, and Skin, Export pairings, Contact, Replay the briefing, Reset all traces
+• Briefing: The pulse opens a window, Stamp the epicenter, Bind inside the coda, Two matches make a pairing. Next, Skip, or Open the drum
+• Empty Timeline: The drum is blank. Stamp epicenter
+
+A counted pairing, not a diagnosis. Traces stay on this device.
