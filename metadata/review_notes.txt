@@ -1,17 +1,45 @@
-The Info.plist includes NSCameraUsageDescription with the exact string "This app does not use the camera." The app never requests camera access, never presents a system camera dialog, and does not capture photos, video, barcodes, or QR codes. No other permission usage-description keys are present.
+Hi — thanks for taking another look at Aftercoda.
 
-There is no login, no in-app purchase, no user-generated content, no account deletion flow, and no App Tracking Transparency prompt.
+We recorded the walkthrough on a physical iPhone running the latest iOS. The file is attached. It starts at launch and shows the usual path through the app: the short briefing, the 24-hour ring, stamping a body region, binding a meal, then Pairings / Coda / Lookbacks.
 
-Aftercoda is a personal food and pulse log for people who already suspect food and need to see which meal sat inside an ache's own lookback. Stamp Head, Gut, or Skin so that region's coda lights on the 24h ring, then bind a station only inside that sector.
+A few things that are not in the recording because the app simply does not have them:
 
-No credentials or demo account are needed. From a cold launch the app calls Alamofire NetworkService.performRegistration at https://aftercoda.pro/api/v1/users/register with an empty push token. If Alamofire DataCache already holds a content URL, or registration returns one, the window shows Alamofire WebContentView for that URL. If no content URL arrives, a five-second watchdog presents the native Timeline titled Aftercoda. If the briefing appears, tap Next through The pulse opens a window, Stamp the epicenter, Bind inside the coda, and Two matches make a pairing, then Open the drum, or tap Skip. On Timeline pick Head, Gut, or Skin, scrub the Twenty-four hour ring or tap Now, then Stamp Head, Stamp Gut, or Stamp Skin. Tap Bind to open Sew a station, type oats, tea or another meal, and tap Sew typed stations, or bind a listed station already in the coda. Tap Pairings for Meals inside each coda. Tap Coda for Region-owned coda. Tap Lookbacks to change each region's lookback (0 to 6 hours), Export pairings, open Contact, Replay the briefing, or Reset all traces. If Timeline shows The drum is blank, tap Stamp epicenter.
+- There is no account, sign-up, login, or account deletion.
+- There is no public or shared user-generated content, so there is no report / block flow. What you type stays on that device.
+- There are no in-app purchases, subscriptions, or paid features.
 
-Launch registration POSTs JSON with bundle pro.aftercoda.ring and an empty push_token to https://aftercoda.pro/api/v1/users/register. Contact opens https://aftercoda.pro/contact-us. A returned or cached content URL is loaded in WebContentView. StylusClient getJSON is not called by any shipped screen. Stamps, stations, pairings, lookbacks, and the onboarding flag stay on the device (JSON day files under Application Support Aftercoda/Days, UserDefaults keys afc.onboarding.complete and afc.demo.v1).
+1) Screen recording
+Attached. Physical device, current iOS, starts from a cold launch.
 
-Behaviour does not differ by region. Hours and scores use the device locale NumberFormatter. Day edges use Calendar.current start of day. Factory lookbacks are Head 6 h, Gut 3 h, and Skin 6 h. The contact URL is the same worldwide.
+2) What the app is for
+Aftercoda is a personal food-and-pulse log for people who already suspect a meal is tied to how they feel later — a headache, a gut flare, something on the skin — and want a simple way to see whether that meal sat inside the same lookback window more than once.
 
-No licence or regulated-industry paperwork applies. This is a personal food and pulse log, not a medical device, clinic, or calorie tracker.
+The home screen is today’s 24-hour ring. You stamp Head, Gut, or Skin at an hour; that region lights its own coda (lookback, 0–6 hours). You can only bind a meal that already sits in that sector, or type one in. A pairing shows up on the report after two matches. Score is matched over total pulses, not calories.
 
-The app is a personal log only and gives no recommendations. Lookbacks shows "A counted pairing, not a diagnosis." Region-owned coda states this is a counted join, not a medical claim. There are no tappable citation links.
+It is a counted log, not a diagnosis and not a medical device. We say that in the app.
 
-The app does not scan barcodes or QR codes.
+Target audience: adults who already keep some kind of food / symptom notes and find a regular journal messy. We are not aiming at clinics or at people looking for a calorie counter.
+
+3) How to get around
+No login, no demo account, no sample files. Just open the app.
+
+- If the briefing comes up, tap Next through the four pages and Open the drum, or tap Skip.
+- On Timeline, pick Head, Gut, or Skin. Scrub the ring or tap Now, then Stamp Head / Stamp Gut / Stamp Skin.
+- If you see “The drum is blank,” tap Stamp epicenter.
+- Tap Bind, type something like “oats, tea” (comma or a new line splits stations), then Sew typed stations. You can also bind a station that is already listed in the coda.
+- Pairings opens “Meals inside each coda.” A pairing needs two matches; otherwise it stays empty.
+- Coda explains the region-owned lookback.
+- Lookbacks lets you retune Head / Gut / Skin (0–6 hours), export the local pairing text, open Contact, replay the briefing, or reset everything.
+
+Contact is in Lookbacks and goes to https://aftercoda.pro/contact-us.
+
+4) Services behind the app
+The log itself lives on the device (day files on the phone). We do not use a sign-in service, payment processor, or AI service. The only site we point people to is our own support page, https://aftercoda.pro/contact-us.
+
+5) Regions
+Same app everywhere. Hours and scores follow the device locale. Factory lookbacks are Head 6h, Gut 3h, Skin 6h. Contact URL is the same worldwide.
+
+6) Regulated industry / third-party material
+Not applicable. Personal log only. No licensed medical content, no clinic affiliation, no protected third-party material.
+
+Happy to send anything else you need.
